@@ -1,0 +1,20 @@
+name: service_user
+description: A starting point for Dart libraries or applications.
+version: 1.0.0
+publish_to: none
+# repository: https://github.com/my_org/my_repo
+
+environment:
+  sdk: ^3.1.0
+
+# Add regular dependencies here.
+dependencies:
+  cloud_firestore: ^4.14.0
+  firebase_auth: ^4.16.0
+  firebase_core: ^2.24.2
+  firebase_messaging: ^14.7.10
+  firebase_storage: ^11.6.0
+
+dev_dependencies:
+  lints: ^3.0.0
+  test: ^1.21.0
