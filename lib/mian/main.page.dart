@@ -7,6 +7,8 @@ import 'package:service_user/service_user.dart';
 import '../repository/authentication.repository.dart';
 import '../repository/repository.movie.dart';
 import 'chat/chat.cubit.dart';
+import 'chat/gift_receive/gift.receive.cubit.dart';
+import 'chat/gift_receive/purchase.cubit.dart';
 import 'chat/list.chat.cubit.dart';
 import 'drawer/drawer.page.dart';
 import 'home/home.cubit.dart';
@@ -48,42 +50,41 @@ class _MainPageState extends State<MainPage> {
       providers: [
         BlocProvider(
           lazy: false,
-          create: (context) =>
-              HomeCubit(repositoryMovie: context.read<RepositoryMovie>()),
+          create: (context) => HomeCubit(repositoryMovie: context.read<RepositoryMovie>()),
         ),
         BlocProvider(
           lazy: false,
-          create: (context) =>
-              NowPlayingCubit(repositoryMovie: context.read<RepositoryMovie>()),
+          create: (context) => NowPlayingCubit(repositoryMovie: context.read<RepositoryMovie>()),
         ),
         BlocProvider(
           lazy: false,
-          create: (context) =>
-              PopulaCubit(repositoryMovie: context.read<RepositoryMovie>()),
+          create: (context) => PopulaCubit(repositoryMovie: context.read<RepositoryMovie>()),
         ),
         BlocProvider(
           lazy: false,
-          create: (context) =>
-              TopRatedCubit(repositoryMovie: context.read<RepositoryMovie>()),
+          create: (context) => TopRatedCubit(repositoryMovie: context.read<RepositoryMovie>()),
         ),
         BlocProvider(
           lazy: false,
-          create: (context) =>
-              UpcomingCubit(repositoryMovie: context.read<RepositoryMovie>()),
+          create: (context) => UpcomingCubit(repositoryMovie: context.read<RepositoryMovie>()),
         ),
         BlocProvider(
-          create: (context) => ListChatCubit(
-              userModel: context.read<AuthenticationRepository>().currentUser ??
-                  UserModel()),
+          create: (context) => ListChatCubit(userModel: context.read<AuthenticationRepository>().currentUser ?? UserModel()),
         ),
         BlocProvider(
           create: (context) => ChatCubit(),
+        ),
+        BlocProvider(
+          create: (context) => GiftReceiveCubit(),
+        ),
+        BlocProvider(
+          create: (context) => PurchaseCubit(),
         ),
       ],
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
-           key: context.read<MainCubit>().key,
+          key: context.read<MainCubit>().key,
           endDrawerEnableOpenDragGesture: false,
           endDrawer: const DrawerPage(),
           backgroundColor: Colors.white,

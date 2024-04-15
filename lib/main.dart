@@ -10,7 +10,6 @@ import 'mian/cubit/user.change.cubit.dart';
 import 'repository/authentication.repository.dart';
 import 'repository/repository.movie.dart';
 
-// import 'package:service_movie/service_movie.dart';
 String baseUrlImage = "https://image.tmdb.org/t/p/original/";
 final GlobalKey<ScaffoldState> myKey = GlobalKey();
 

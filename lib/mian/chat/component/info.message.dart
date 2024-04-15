@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../provider/message.model.dart';
-import 'message.file.dart';
 import 'message.image.dart';
 import 'message.mess.dart';
 
@@ -33,18 +32,11 @@ class InfoMessage extends StatelessWidget {
             : DecorationMedia(
                 child: MessageImage(message: message, isAnother: isAnother),
               );
-      case "file":
-        return isAnother
-            ? DecorationMedia(
-                child: MessageFile(message: message, isAnother: isAnother))
-            : DecorationMedia(
-                child: MessageFile(message: message, isAnother: isAnother),
-              );
       case "sendgift":
         return SizedBox(
           child: Padding(
             padding: const EdgeInsets.only(right: 16.0),
-            child: Text(message.message ?? "", style: const TextStyle(fontSize: 20, color: Colors.blue, fontWeight: FontWeight.w700),),
+            child: Text(message.message ?? "", style: const TextStyle(fontSize: 12, color: Colors.blue, fontWeight: FontWeight.w500),),
           ),
         );
 
@@ -79,16 +71,6 @@ class DecorationAnotherNormal extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 6.0),
-              child: CustomPaint(
-                painter: PainterAnotherMessageTail(),
-                child: const SizedBox(
-                  width: 8,
-                  height: 10,
-                ),
-              ),
-            ),
             Container(
               constraints: const BoxConstraints(minWidth: 50, maxWidth: 200),
               decoration: BoxDecoration(
@@ -152,19 +134,10 @@ class DecorationOwnNormal extends StatelessWidget {
             ],
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 6.0),
-          child: CustomPaint(
-            painter: PainterOwnMessageTail(),
-            child: const SizedBox(
-              width: 8,
-              height: 10,
-            ),
-          ),
-        ),
         const SizedBox(
           width: 10,
-        )
+        ),
+
       ],
     );
   }

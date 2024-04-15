@@ -120,11 +120,6 @@ class _SplashPageState extends State<SplashPage> with WidgetsBindingObserver {
     if (email != "" && pass != "") {
       try {
         var user = await repo.login(email: email!, password: pass!);
-        // if (user != null) {
-        //   repo.updateUer(user);
-        // } else {
-        //   repo.requestEmptyUser();
-        // }
       } catch (e) {
         repo.requestEmptyUser();
       }

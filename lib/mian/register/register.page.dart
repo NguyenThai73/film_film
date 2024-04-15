@@ -205,7 +205,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "Do you already have an account? ",
+                                "Do you have an account? ",
                                 style: TextStyle(
                                     fontSize: 16, color: Colors.black),
                               ),

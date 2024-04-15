@@ -14,7 +14,7 @@ class ErrorWidgetApp extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         Text(
-          errorModel.title ?? "Error!!!",
+          errorModel.title ?? "Error",
           textAlign: TextAlign.center,
           style: const TextStyle(color: Colors.black, fontSize: 18),
         ),
@@ -52,8 +52,8 @@ class ErrorWidgetApp extends StatelessWidget {
                           begin: Alignment.centerLeft,
                           end: Alignment.centerRight,
                           colors: [
-                            Color.fromARGB(255, 18, 93, 255),
-                            Color.fromARGB(255, 98, 185, 255)
+                            Color.fromARGB(255, 18, 239, 255),
+                            Color.fromARGB(255, 195, 255, 252)
                           ]),
                       borderRadius: BorderRadius.circular(20)),
                   child: const Text("OK",
